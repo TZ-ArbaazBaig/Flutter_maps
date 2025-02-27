@@ -1,0 +1,69 @@
+  Future<void> _determinePosition() async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.deniedForever) {
+      return Future.error('Location permissions are denied');
+    }
+
+    _carIcon = await BitmapDescriptor.fromAssetImage(
+      const ImageConfiguration(size: Size(28, 28)),
+      'assets/images/car_icon1.png',
+    );
+
+    Geolocator.getPositionStream().listen((Position? position) async {
+      if (position != null) {
+        _currentPosition = LatLng(position.latitude, position.longitude);
+
+        markers.clear();
+        markers.add(Marker(
+          markerId: const MarkerId('carMarker'),
+          position: _currentPosition,
+          rotation: _currentRotation, // Rotation based on sensor data
+          icon: _carIcon ?? BitmapDescriptor.defaultMarker,
+          infoWindow: const InfoWindow(title: 'Current Location'),
+        ));
+        markers.add(Marker(
+          markerId: const MarkerId('destination'),
+          position: _defaultDestination,
+          icon: BitmapDescriptor.defaultMarkerWithHue(BitmapDescriptor.hueBlue),
+          infoWindow: const InfoWindow(title: 'Default Destination'),
+        ));
+
+        _circles.clear();
+        _circles.add(Circle(
+          circleId: const CircleId('user_circle'),
+          center: _currentPosition,
+          radius: 30,
+          fillColor: Colors.blue.withOpacity(0.2),
+          strokeColor: Colors.blue,
+          strokeWidth: 1,
+        ));
+
+        if (_previousPosition != null) {
+          double distance = Geolocator.distanceBetween(
+            _previousPosition!.latitude,
+            _previousPosition!.longitude,
+            position.latitude,
+            position.longitude,
+          );
+          _distanceTravelled += distance;
+        }
+
+        _previousPosition = position;
+        await _getDirections();
+        if (!hasReachedDestination) {
+          _checkIfReachedDestination();
+        }
+        setState(() {});
+      }
+    });
+    _listenToSensorData();
+  }

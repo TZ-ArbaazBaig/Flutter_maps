@@ -1,0 +1,30 @@
+
+{
+    "helloworld": "مرحبًا بالعالم",
+    "email": "البريد الإلكتروني",
+    "hintemail": "أدخل البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "cpassword": "تأكيد كلمة المرور",
+    "hintpassword": "أدخل كلمة المرور",
+    "forgotpassword": "نسيت كلمة المرور؟",
+    "signin": "تسجيل الدخول",
+    "donthaveaccount": "ليس لديك حساب؟",
+    "signup": "إنشاء حساب",
+    "name": "الاسم",
+    "entname": "أدخل اسمك",
+    "pleaseconfirm": "يرجى تأكيد كلمة المرور",
+    "passwordmatch": "كلمات المرور تتطابق!",
+    "alreadyhaveanaccount": "هل لديك حساب بالفعل؟",
+    "plzenteremail": "يرجى إدخال البريد الإلكتروني",
+
+     "drawerTitle": "درج",
+    "home": "الصفحة الرئيسية",
+    "settings": "الإعدادات",
+
+    
+    "okb": "موافق",
+    "cancelb": "إلغاء",
+    "okp": "تم الضغط على زر موافق",
+    "cancelp": "تم الضغط على زر إلغاء"
+
+}

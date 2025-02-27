@@ -1,0 +1,27 @@
+{
+    "helloworld":"Hello world",
+    "email":"Email",
+    "hintemail":"Enter the mail",
+    "password":"Password",
+    "cpassword":"Confirm Password",
+    "hintpassword":"Enter the password",
+    "forgotpassword":"Forgot Password ?",
+    "signin":"Sign in",
+    "donthaveaccount":"Don't Have a account?",
+    "signup":"SIGN UP",
+    "name":"Name",
+    "entname":"Enter Your Name",
+    "pleaseconfirm":"Please confirm your password",
+    "passwordmatch":"Passwords match!",
+    "alreadyhaveanaccount":"Already Have a account?",
+    "plzenteremail":"Please Enter the password",
+
+    "drawerTitle": "Drawer",
+      "home": "Home",
+     "settings": "Settings",
+
+     "okb":"ok",
+     "cancelb":"cancel",
+     "okp":"ok button pressed",
+     "cancelp":"cancel button pressed"
+}

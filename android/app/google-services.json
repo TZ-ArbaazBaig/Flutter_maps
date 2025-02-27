@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "938443124208",
+    "project_id": "fir-try-cff76",
+    "storage_bucket": "fir-try-cff76.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:938443124208:android:9074bee30e1f0bc4384135",
+        "android_client_info": {
+          "package_name": "com.example.currency_converter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmb3PNrVSSzE5_gh_t2XFEeZB3YDG5r0U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
